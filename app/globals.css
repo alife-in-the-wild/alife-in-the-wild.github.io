@@ -47,19 +47,26 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 ::selection { background: var(--accent); color: var(--bg); }
 
-/* ---------- Background canvas + veil ---------- */
-#bg {
+/* ---------- Background image + veil ---------- */
+.bg-image {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
   z-index: -3;
-  display: block;
-  background: radial-gradient(1200px 700px at 70% 10%, #131826 0%, var(--bg) 55%, #07080c 100%);
+  background-image: url('/bg/ornithography.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Keep the photo legible behind dark text/UI without washing it out. */
+  filter: saturate(0.85) brightness(0.55) contrast(1.05);
+  /* Prevent flash before the image loads. */
+  background-color: var(--bg);
 }
 .bg-veil {
   position: fixed; inset: 0; z-index: -2; pointer-events: none;
-  background: linear-gradient(180deg, rgba(11,13,18,0.0) 0%, rgba(11,13,18,0.55) 70%, rgba(11,13,18,0.92) 100%);
+  /* Slightly stronger top-down veil — the photo has a lot of warm detail
+     and we need the lower part of the page to read as near-solid bg. */
+  background:
+    linear-gradient(180deg, rgba(11,13,18,0.35) 0%, rgba(11,13,18,0.75) 55%, rgba(11,13,18,0.97) 100%);
 }
 .bg-grain {
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
