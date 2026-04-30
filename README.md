@@ -5,107 +5,101 @@ Conference on Artificial Life.
 
 Lives at **https://alife-in-the-wild.github.io/**.
 
-## Stack
+## How it works
 
-Plain HTML, CSS, and a small bit of vanilla JS. No build step. Content
-is authored in markdown files under `content/`; an inline loader fetches
-them and renders them into the page on load.
+Two-stage static site. Content lives in markdown, layout lives in an
+HTML template, and a small Node build script bakes them together into a
+single fully-static `index.html` that GitHub Pages serves directly. No
+runtime markdown loading, no client-side parsing, no flash of empty
+content.
 
 ```
 .
-├── index.html
-├── content/                # ← edit these to change site content
+├── template.html           # source layout (edit for structure)
+├── content/                # source content (edit for words)
 │   ├── about.md
 │   ├── cfp.md
 │   ├── dates.md
 │   ├── topics.md
 │   ├── speakers.md
 │   └── organisers.md
+├── build.js                # markdown → HTML build script
+├── package.json
+├── index.html              # ← GENERATED. do not edit by hand.
 ├── assets/
 │   ├── css/style.css
-│   └── js/
-│       ├── background.js   # generative flow-field background canvas
-│       └── content.js      # markdown loader + renderers
-├── .nojekyll               # tell GitHub Pages not to run Jekyll
+│   └── js/background.js    # generative flow-field background canvas
+├── .nojekyll
 └── README.md
 ```
 
+`index.html` is a build artifact, but it **is** committed to git so
+GitHub Pages can serve it without running a build action.
+
 ## Editing content
 
-**You should not normally need to touch `index.html`.** Almost everything
-visible on the site is rendered from one of the markdown files in
-`content/`. Each file has a comment at the top explaining its
-conventions. The short version:
+You should not normally need to touch `template.html` or `index.html`.
+Almost everything visible on the site is rendered from one of the
+markdown files in `content/`:
 
 | File              | Section          | What it controls                                                |
 | ----------------- | ---------------- | --------------------------------------------------------------- |
-| `about.md`        | The theme        | The lead callout (chunk 1) and prose body (chunk 2), split on `---` |
+| `about.md`        | The theme        | Lead callout (chunk 1) and prose body (chunk 2), split on `---` |
 | `cfp.md`          | Call for papers  | Optional intro paragraph + one card per `---`-separated chunk   |
 | `dates.md`        | Important dates  | A markdown table; last row is highlighted as the workshop date  |
 | `topics.md`       | Topics           | One topic per chunk; trailing line of `` `#tags` `` becomes chips |
 | `speakers.md`     | Invited speakers | One speaker per chunk; first paragraph after the heading = affiliation |
 | `organisers.md`   | Organisers       | Markdown list of organisers (chunk 1) + committee paragraph (chunk 2) |
 
-For example, to change a CFP track, open `content/cfp.md`, find the
-relevant `## Card title` block, and edit it. The card on the page will
-update next reload.
+Each file has a comment at the top documenting its convention. The
+short version:
 
-### Conventions in detail
+- **Chunks** — `---` on its own line separates repeating items.
+- **Cards** — `## Heading`, then a one-line tagline, then body paragraphs.
+- **Tags** — in `topics.md`, end the topic with a line of inline-code spans:
+  `` `#openendedness` `#fielddeployment` ``.
+- **Tables** — `dates.md` is a GFM markdown table; put the workshop date
+  *last* (the build script highlights the last row).
 
-**Chunks** — wherever a file uses `---` on its own line, that's a
-separator between repeating items (cards, topics, speakers).
+## Build
 
-**Cards** — every "card" type has the same shape:
-
-```md
-## Card heading
-Tagline (one short line — rendered in accent type).
-
-Body paragraph(s).
-```
-
-**Tags** — in `topics.md`, the last line of a topic must be inline-code
-spans:
-
-```md
-`#openendedness` `#noveltysearch` `#fielddeployment`
-```
-
-These render as the small pill chips at the bottom of each topic card.
-
-**Tables** — `dates.md` is just a GitHub-flavoured markdown table. The
-loader rewrites it into the styled three-column grid, with the *last*
-row highlighted (so put the workshop date last).
-
-If something doesn't render the way you expect, check the browser
-console — the loader logs a warning and falls back to the static HTML
-inside the placeholder div if a markdown file fails to parse.
-
-## Local preview
-
-Markdown loads via `fetch()`, which doesn't work on `file://` URLs in
-most browsers. So you need a local server:
+One-time setup:
 
 ```sh
-python3 -m http.server 8000
-# then open http://localhost:8000
+npm install
 ```
 
-If you'd rather just edit `index.html` directly, you can — every
-`<div data-md-section="…">` placeholder contains a small fallback that
-shows up if the markdown fails to load.
+Whenever you change `content/*.md` or `template.html`:
+
+```sh
+npm run build      # regenerates index.html
+```
+
+There's also a convenience script that builds and starts a local server:
+
+```sh
+npm run dev        # build + python3 -m http.server 8000
+```
+
+Open <http://localhost:8000>.
+
+The build pulls every `<div data-md-section="X">` placeholder out of
+`template.html`, runs the matching markdown file through its renderer,
+and writes the result back into the DOM. The output is plain HTML —
+open `index.html` directly with `file://` and the content is all there.
 
 ## Deploy on GitHub Pages
 
-1. Push this repo to `alife-in-the-wild/alife-in-the-wild.github.io`
-   (the repo name must match the org name for the apex URL to work).
-2. In **Settings → Pages**, set *Source* to **Deploy from branch**,
-   branch `main`, folder `/ (root)`.
-3. Wait ~30 seconds. The site will be live at
-   <https://alife-in-the-wild.github.io/>.
+The repo is already wired up to deploy from the `main` branch:
 
-The `.nojekyll` file disables Jekyll processing so files starting with
-`_` are served as-is.
+1. Edit content (`content/*.md`).
+2. `npm run build`
+3. `git add -A && git commit -m "Update CFP" && git push`
+4. Pages rebuilds in ~30s.
+
+Don't forget step 2 — pushing without rebuilding will leave the live
+site showing stale content. (If you'd rather have CI run the build,
+swap to a GitHub Actions Pages workflow; ask if you want it set up.)
 
 ## Visual tuning
 
@@ -139,7 +133,7 @@ The script automatically pauses when the tab is hidden, respects
 ### Swapping in a real video
 
 If you later want to use an actual video instead of the canvas, replace
-the `<canvas id="bg">` element in `index.html` with:
+the `<canvas id="bg">` element in `template.html` with:
 
 ```html
 <video id="bg" autoplay muted loop playsinline poster="poster.jpg">
@@ -148,8 +142,9 @@ the `<canvas id="bg">` element in `index.html` with:
 </video>
 ```
 
-…and remove the `<script src="assets/js/background.js">` line. The
-existing CSS rule for `#bg` will size the video correctly.
+…remove the `<script src="assets/js/background.js">` line, then
+`npm run build`. The existing CSS rule for `#bg` will size the video
+correctly.
 
 ## License
 
