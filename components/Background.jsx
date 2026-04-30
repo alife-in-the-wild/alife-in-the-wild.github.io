@@ -1,14 +1,23 @@
-/* Static image background.
- * The canvas flow-field has been replaced by a fixed photograph.
+/* Fixed-position video background.
  * Veil + grain overlays remain so text on top stays readable.
  *
- * Image: bg/ornithography.jpg
- * Confirm you have rights / permission for the image you place here.
+ * Source: public/bg/ultrasound.mp4
+ * Confirm you have rights / permission for the clip you place here.
  */
 export default function Background() {
   return (
     <>
-      <div className="bg-image" aria-hidden="true" />
+      <video
+        className="bg-video"
+        src="/bg/ultrasound.mp4"
+        poster="/bg/ornithography.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      />
       <div className="bg-veil" aria-hidden="true" />
       <div className="bg-grain" aria-hidden="true" />
     </>

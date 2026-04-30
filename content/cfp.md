@@ -19,7 +19,7 @@
 -->
 
 We invite extended abstracts, artefacts, and field reports for the
-*Artificial Life in the Wild · Agent Ethology* workshop at
+*Artificial Life in the Wild* workshop at
 [ALIFE 2026](https://2026.alife.org/) in Waterloo, Canada. All accepted
 contributions appear in the open-access ALIFE 2026 workshop proceedings.
 

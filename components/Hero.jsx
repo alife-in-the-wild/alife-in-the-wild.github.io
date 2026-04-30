@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="hero-inner">
         <p className="eyebrow">
           <span className="eyebrow-dot"></span>
-          Agent Ethology · A workshop at ALIFE&nbsp;2026 · Waterloo
+          A workshop at ALIFE&nbsp;2026 · Waterloo, Canada
         </p>
         <h1 className="display">
           <span className="line">Artificial Life</span>
