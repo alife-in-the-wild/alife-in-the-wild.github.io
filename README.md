@@ -39,17 +39,139 @@ Lives at **https://alife-in-the-wild.github.io/**.
 
 ## Editing content
 
-You should not normally need to touch any `.jsx` file. Each markdown
-file in `content/` has a comment at the top documenting its conventions:
+You should not normally need to touch any `.jsx` file — every section's
+copy comes from one of the markdown files in `content/`. Workflow:
 
-| File              | Section          | What it controls                                                |
+```sh
+# 1. edit the markdown file you want to change
+$EDITOR content/cfp.md
+
+# 2. (optional) preview locally with hot reload
+npm run dev          # http://localhost:3000
+
+# 3. commit and push — GitHub Actions builds and deploys automatically
+git add content/cfp.md
+git commit -m "Update CFP: add field-reports track"
+git push
+```
+
+The deploy takes ~60 s after push. Watch it at
+<https://github.com/alife-in-the-wild/alife-in-the-wild.github.io/actions>.
+
+Each markdown file has a comment at the top documenting its convention,
+but here's the cheat sheet:
+
+| File              | Section          | Format                                                          |
 | ----------------- | ---------------- | --------------------------------------------------------------- |
 | `about.md`        | The theme        | Lead callout (chunk 1) and prose body (chunk 2), split on `---` |
 | `cfp.md`          | Call for papers  | Optional intro paragraph + one card per `---`-separated chunk   |
-| `dates.md`        | Important dates  | A markdown table; last row is highlighted as the workshop date  |
+| `dates.md`        | Important dates  | A markdown table; the last row is highlighted as the workshop date |
 | `topics.md`       | Topics           | One topic per chunk; trailing line of `` `#tags` `` becomes chips |
 | `speakers.md`     | Invited speakers | One speaker per chunk; first paragraph after the heading = affiliation |
 | `organisers.md`   | Organisers       | Markdown list (chunk 1) + committee paragraph (chunk 2)         |
+
+Common rule: `---` on its own line is a separator between repeating
+items. Inline markdown (`*italic*`, `**bold**`, `[links](url)`) works
+everywhere.
+
+### `content/cfp.md` — call for papers
+
+The first chunk (before the first `---`) is the optional intro
+paragraph. Each subsequent chunk is one card and follows this exact
+shape:
+
+```md
+## Card title
+Tagline shown in accent type — one short line (length / format / template).
+
+Body paragraph.
+
+A second body paragraph if you want one.
+```
+
+To **add a new track**, copy a card block, paste it after a `---`, and
+edit. To **remove one**, delete it together with its leading `---`.
+
+### `content/about.md` — the theme
+
+Two chunks separated by a single `---`. Chunk 1 is the big callout
+(short, italics get the accent colour). Chunk 2 is the regular prose.
+
+```md
+*In the wild* means leaving the petri dish. …
+
+---
+
+Artificial life has always been a discipline of *as it could be*. …
+
+Second paragraph of body prose.
+```
+
+### `content/dates.md` — important dates
+
+A standard GFM table. The build script highlights the **last row**, so
+keep the workshop itself at the bottom.
+
+```md
+| Milestone           | Deadline      | Notes                              |
+| ------------------- | ------------- | ---------------------------------- |
+| Submissions open    | 15 Apr 2026   | OpenReview portal goes live        |
+| Submission deadline | 19 Jun 2026   | Extended abstracts and artefacts   |
+| Workshop            | Oct 2026      | Co-located with ALIFE 2026         |
+
+> Optional blockquote underneath becomes the small footnote line.
+```
+
+### `content/topics.md` — topics grid
+
+One topic per chunk. The **last** line of each chunk must be a row of
+inline-code spans starting with `#` — those become the tag chips:
+
+```md
+## Open-ended systems, outdoors
+
+Description paragraph that explains the topic.
+
+`#openendedness` `#noveltysearch` `#fielddeployment`
+
+---
+
+## Embodied & situated agents
+
+Description …
+
+`#embodiment` `#softrobotics`
+```
+
+### `content/speakers.md` — invited speakers
+
+One speaker per chunk. First paragraph after the heading is the
+affiliation line; everything after that is the bio.
+
+```md
+## Anna Example
+Some University · Field of work
+
+Bio paragraph.
+
+Optional second bio paragraph.
+```
+
+### `content/organisers.md` — organisers + committee
+
+Two chunks. Chunk 1 is a markdown list of organisers — each item must
+follow `- **Name** — Affiliation` (em-dash or hyphen both work). Chunk
+2 is free prose for the programme committee paragraph.
+
+```md
+- **Amber Example** — University of Oxford
+- **Pat Example** — Some Institute
+
+---
+
+The committee will be drawn from … [Get in touch](mailto:foo@bar.com)
+if you would like to review.
+```
 
 ## Local development
 
