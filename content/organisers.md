@@ -5,9 +5,9 @@
   Chunk 2: programme committee paragraph (free prose).
 -->
 
-- **Amber Botao Hu** — Reality Design Lab
-- **Co-organiser** — Affiliation
-- **Co-organiser** — Affiliation
+- **Botao Amber Hu** — University of Oxford
+- **Helena Rong** — Affiliation TBA
+- **Joel Lehman** — University of Oxford
 
 ---
 
