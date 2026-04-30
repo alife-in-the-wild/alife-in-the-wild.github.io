@@ -36,11 +36,13 @@ export default function Background() {
       size: Math.random() * 0.9 + 0.35,
     });
 
-    const flow = (x, y, time) =>
-      Math.sin(x * NOISE_SCALE + time) +
-      Math.sin(y * NOISE_SCALE * 1.3 - time * 0.7) +
-      Math.sin((x + y) * NOISE_SCALE * 0.6 + time * 0.4) * 1.8 +
-      Math.sin(y * 0.0008) * 0.4;
+    const flow = (x, y, time) => {
+      const a =
+        Math.sin(x * NOISE_SCALE + time) +
+        Math.sin(y * NOISE_SCALE * 1.3 - time * 0.7) +
+        Math.sin((x + y) * NOISE_SCALE * 0.6 + time * 0.4);
+      return a * 1.8 + Math.sin(y * 0.0008) * 0.4;
+    };
 
     const colorFor = (p) => {
       const mint  = [191, 230, 201];
@@ -54,8 +56,9 @@ export default function Background() {
 
     const resize = () => {
       DPR = Math.min(window.devicePixelRatio || 1, 2);
-      W = canvas.clientWidth = window.innerWidth;
-      H = canvas.clientHeight = window.innerHeight;
+      W = window.innerWidth;
+      H = window.innerHeight;
+      // The drawing-buffer size — CSS sizes the element via #bg { width: 100%; height: 100% }
       canvas.width = Math.floor(W * DPR);
       canvas.height = Math.floor(H * DPR);
       ctx.setTransform(DPR, 0, 0, DPR, 0, 0);

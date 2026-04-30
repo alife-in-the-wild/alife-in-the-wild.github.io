@@ -4,15 +4,15 @@
   "private": true,
   "description": "Static Next.js site for the ALIFE 2026 'Artificial Life in the Wild' workshop.",
   "scripts": {
-    "dev":   "next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint":  "next lint"
+    "lint": "next lint"
   },
   "dependencies": {
-    "next":  "14.2.15",
+    "marked": "^12.0.2",
+    "next": "14.2.15",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "marked": "^12.0.2"
+    "react-dom": "18.3.1"
   }
 }
