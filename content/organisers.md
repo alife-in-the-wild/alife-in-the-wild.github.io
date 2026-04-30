@@ -6,7 +6,7 @@
 -->
 
 - **Botao Amber Hu** — University of Oxford
-- **Helena Rong** — Affiliation TBA
+- **Helena Rong** — New York University Shanghai
 - **Joel Lehman** — University of Oxford
 
 ---
