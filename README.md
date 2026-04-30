@@ -1,46 +1,46 @@
 # Artificial Life in the Wild — ALIFE 2026 Workshop
 
-Static site for the *Artificial Life in the Wild* workshop at the 2026
-Conference on Artificial Life.
+Static Next.js site for the *Artificial Life in the Wild* workshop at the
+2026 Conference on Artificial Life.
 
 Lives at **https://alife-in-the-wild.github.io/**.
 
 ## How it works
 
-Two-stage static site. Content lives in markdown, layout lives in an
-HTML template, and a small Node build script bakes them together into a
-single fully-static `index.html` that GitHub Pages serves directly. No
-runtime markdown loading, no client-side parsing, no flash of empty
-content.
+- Next.js 14 App Router, exported as a fully static site (`output: 'export'`).
+- Content lives in plain markdown (`content/*.md`).
+- Each section is a server component that reads its `.md` at build time
+  via `lib/content.js` and renders JSX. No client-side markdown.
+- The animated background is a single `'use client'` component using
+  vanilla `<canvas>` — no animation library.
+- GitHub Actions runs `next build` on every push to `main` and deploys
+  the resulting `out/` directory to GitHub Pages.
 
 ```
 .
-├── template.html           # source layout (edit for structure)
-├── content/                # source content (edit for words)
-│   ├── about.md
-│   ├── cfp.md
-│   ├── dates.md
-│   ├── topics.md
-│   ├── speakers.md
-│   └── organisers.md
-├── build.js                # markdown → HTML build script
+├── app/
+│   ├── layout.jsx          # <html>, fonts, header, canvas, footer
+│   ├── page.jsx            # composes the sections
+│   └── globals.css
+├── components/
+│   ├── About.jsx · Cfp.jsx · Dates.jsx · Topics.jsx
+│   ├── Speakers.jsx · Organisers.jsx
+│   ├── Header.jsx · Hero.jsx · Footer.jsx · Section.jsx
+│   └── Background.jsx      # 'use client' canvas
+├── lib/content.js          # markdown parsing helpers (build-time)
+├── content/                # ← edit these to change site copy
+│   ├── about.md · cfp.md · dates.md
+│   ├── topics.md · speakers.md · organisers.md
+├── public/                 # static files served at site root
+├── next.config.mjs
 ├── package.json
-├── index.html              # ← GENERATED. do not edit by hand.
-├── assets/
-│   ├── css/style.css
-│   └── js/background.js    # generative flow-field background canvas
-├── .nojekyll
-└── README.md
+└── .github/workflows/deploy.yml
 ```
-
-`index.html` is a build artifact, but it **is** committed to git so
-GitHub Pages can serve it without running a build action.
 
 ## Editing content
 
-You should not normally need to touch `template.html` or `index.html`.
-Almost everything visible on the site is rendered from one of the
-markdown files in `content/`:
+You should not normally need to touch any `.jsx` file. Each markdown
+file in `content/` has a comment at the top documenting its conventions:
 
 | File              | Section          | What it controls                                                |
 | ----------------- | ---------------- | --------------------------------------------------------------- |
@@ -49,102 +49,48 @@ markdown files in `content/`:
 | `dates.md`        | Important dates  | A markdown table; last row is highlighted as the workshop date  |
 | `topics.md`       | Topics           | One topic per chunk; trailing line of `` `#tags` `` becomes chips |
 | `speakers.md`     | Invited speakers | One speaker per chunk; first paragraph after the heading = affiliation |
-| `organisers.md`   | Organisers       | Markdown list of organisers (chunk 1) + committee paragraph (chunk 2) |
+| `organisers.md`   | Organisers       | Markdown list (chunk 1) + committee paragraph (chunk 2)         |
 
-Each file has a comment at the top documenting its convention. The
-short version:
-
-- **Chunks** — `---` on its own line separates repeating items.
-- **Cards** — `## Heading`, then a one-line tagline, then body paragraphs.
-- **Tags** — in `topics.md`, end the topic with a line of inline-code spans:
-  `` `#openendedness` `#fielddeployment` ``.
-- **Tables** — `dates.md` is a GFM markdown table; put the workshop date
-  *last* (the build script highlights the last row).
-
-## Build
-
-One-time setup:
+## Local development
 
 ```sh
 npm install
+npm run dev          # http://localhost:3000  with hot reload
 ```
 
-Whenever you change `content/*.md` or `template.html`:
+## Build a static export locally
 
 ```sh
-npm run build      # regenerates index.html
+npm run build        # produces ./out/
+npx serve out        # or: python3 -m http.server -d out 8000
 ```
 
-There's also a convenience script that builds and starts a local server:
+## Deploy
 
-```sh
-npm run dev        # build + python3 -m http.server 8000
-```
+Just push to `main`. The `Deploy Next.js static export to GitHub Pages`
+workflow runs on every push and publishes `out/` via Pages. The repo
+Pages source is set to **GitHub Actions** (not branch deploy).
 
-Open <http://localhost:8000>.
-
-The build pulls every `<div data-md-section="X">` placeholder out of
-`template.html`, runs the matching markdown file through its renderer,
-and writes the result back into the DOM. The output is plain HTML —
-open `index.html` directly with `file://` and the content is all there.
-
-## Deploy on GitHub Pages
-
-The repo is already wired up to deploy from the `main` branch:
-
-1. Edit content (`content/*.md`).
-2. `npm run build`
-3. `git add -A && git commit -m "Update CFP" && git push`
-4. Pages rebuilds in ~30s.
-
-Don't forget step 2 — pushing without rebuilding will leave the live
-site showing stale content. (If you'd rather have CI run the build,
-swap to a GitHub Actions Pages workflow; ask if you want it set up.)
+You can watch deployments at:
+<https://github.com/alife-in-the-wild/alife-in-the-wild.github.io/actions>
 
 ## Visual tuning
 
-Most visual settings live in `:root` at the top of
-`assets/css/style.css`:
+Most visual settings live in `:root` at the top of `app/globals.css`:
 
 - `--bg`, `--ink`, `--accent`, `--accent-2` — colour palette
 - `--font-display` / `--font-sans` / `--font-mono` — type stack
 
 ## Background animation
 
-The animated background is a flow-field particle system in
-`assets/js/background.js` — meant to evoke the audio-reactive
-emergent-lifeforms feeling of Universal Everything's *Ultrasound*
-without shipping a multi-megabyte video.
+The animated background is `components/Background.jsx` — a flow-field
+particle system meant to evoke the audio-reactive emergent-lifeforms
+feeling of Universal Everything's *Ultrasound* without shipping a
+multi-megabyte video.
 
-Knobs at the top of the file:
-
-| Constant         | What it does                                |
-| ---------------- | ------------------------------------------- |
-| `TARGET_DENSITY` | Particles per CSS pixel² (auto-clamped)     |
-| `MAX_PARTICLES`  | Hard cap                                    |
-| `FADE_ALPHA`     | Trail length — lower = longer trails        |
-| `SPEED`          | Particle velocity                           |
-| `NOISE_SCALE`    | Spatial frequency of the flow field         |
-| `NOISE_TIME`     | How fast the field evolves over time        |
-
-The script automatically pauses when the tab is hidden, respects
+The component pauses when the tab is hidden, respects
 `prefers-reduced-motion`, and caps device pixel ratio at 2× on mobile.
-
-### Swapping in a real video
-
-If you later want to use an actual video instead of the canvas, replace
-the `<canvas id="bg">` element in `template.html` with:
-
-```html
-<video id="bg" autoplay muted loop playsinline poster="poster.jpg">
-  <source src="assets/video/background.webm" type="video/webm">
-  <source src="assets/video/background.mp4"  type="video/mp4">
-</video>
-```
-
-…remove the `<script src="assets/js/background.js">` line, then
-`npm run build`. The existing CSS rule for `#bg` will size the video
-correctly.
+The tunable constants are at the top of the `useEffect` body.
 
 ## License
 
