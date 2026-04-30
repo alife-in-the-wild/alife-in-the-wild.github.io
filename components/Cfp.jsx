@@ -33,7 +33,7 @@ export default async function Cfp() {
           href="#"
           aria-disabled="true"
         >
-          Submission portal — opens 15 Apr 2026
+          Submission portal — opens 15 May 2026
         </a>
         <a
           className="btn ghost"

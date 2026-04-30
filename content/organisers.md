@@ -5,10 +5,9 @@
   Chunk 2: programme committee paragraph (free prose).
 -->
 
-- **Organiser name** — University of Oxford
-- **Organiser name** — Affiliation
-- **Organiser name** — Affiliation
-- **Organiser name** — Affiliation
+- **Amber Botao Hu** — Reality Design Lab
+- **Co-organiser** — Affiliation
+- **Co-organiser** — Affiliation
 
 ---
 

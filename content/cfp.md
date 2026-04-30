@@ -14,12 +14,14 @@
     - The first paragraph after the `## ` is treated as the tagline.
     - All following paragraphs become the card body.
 
-  The submit / contact buttons live in index.html, not here.
+  The submit / contact buttons live in index.html (or rather, in Cfp.jsx),
+  not here.
 -->
 
 We invite extended abstracts, artefacts, and field reports for the
-*Artificial Life in the Wild* workshop. All accepted contributions appear
-in the open-access ALIFE 2026 workshop proceedings.
+*Artificial Life in the Wild · Agent Ethology* workshop at
+[ALIFE 2026](https://2026.alife.org/) in Waterloo, Canada. All accepted
+contributions appear in the open-access ALIFE 2026 workshop proceedings.
 
 ---
 
@@ -27,8 +29,9 @@ in the open-access ALIFE 2026 workshop proceedings.
 2–4 pages · single-blind · ALIFE template
 
 Position papers, late-breaking work, and contributions describing field
-deployments or works-in-progress. Selected abstracts will be presented as
-short talks at the workshop.
+deployments or works-in-progress in the wild — embodied agents, multi-agent
+ecologies, LLM-driven agentic systems, biohybrids, environmental computing.
+Selected abstracts will be presented as short talks at the workshop.
 
 ---
 
@@ -37,7 +40,7 @@ short talks at the workshop.
 
 Robots, sculptures, instruments, code, datasets, organisms — anything you
 can show. We have a small space for physical artefacts and a remote demo
-slot for things that cannot travel.
+slot for things that cannot travel to Waterloo.
 
 ---
 
@@ -46,4 +49,5 @@ slot for things that cannot travel.
 
 What broke. What surprised you. What you learned that the paper did not
 let you say. We particularly welcome reports of systems that did not
-behave as predicted.
+behave as predicted, and ethologically-styled observation studies of
+deployed AI agents.

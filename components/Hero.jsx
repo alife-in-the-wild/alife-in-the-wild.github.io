@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="hero-inner">
         <p className="eyebrow">
           <span className="eyebrow-dot"></span>
-          A workshop at the 2026 Conference on Artificial Life
+          Agent Ethology · A workshop at ALIFE&nbsp;2026 · Waterloo
         </p>
         <h1 className="display">
           <span className="line">Artificial Life</span>
@@ -19,15 +19,15 @@ export default function Hero() {
         <div className="hero-meta">
           <div>
             <span className="meta-label">When</span>
-            <span className="meta-value">October&nbsp;2026 · Day&nbsp;1</span>
+            <span className="meta-value">17–21&nbsp;Aug&nbsp;2026</span>
           </div>
           <div>
             <span className="meta-label">Where</span>
-            <span className="meta-value">ALIFE&nbsp;2026 · Venue&nbsp;TBA</span>
+            <span className="meta-value">Waterloo,&nbsp;Canada</span>
           </div>
           <div>
             <span className="meta-label">Format</span>
-            <span className="meta-value">Hybrid · Half&nbsp;day</span>
+            <span className="meta-value">Hybrid · ALIFE&nbsp;2026</span>
           </div>
         </div>
         <div className="hero-cta">
