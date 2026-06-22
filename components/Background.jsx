@@ -7,9 +7,10 @@
  *   - skip the 25 MB download entirely on small screens and when the user
  *     prefers reduced motion (the poster image stays as the background);
  *   - lazy-attach the source (preload="none") and start playback ourselves;
- *   - pause when the tab is hidden (Page Visibility) and when the video has
- *     scrolled out of view behind the near-opaque veil — no point decoding
- *     frames nobody can see.
+ *   - pause only when the tab is hidden (Page Visibility) — no point decoding
+ *     frames nobody can see. (We do NOT pause on scroll: the video and veil are
+ *     both position:fixed, so the clip stays visible at the top of the viewport
+ *     the whole way down the page — pausing it would just freeze a visible frame.)
  * The per-frame CSS filter, blend-mode grain and header backdrop-blur that used
  * to recomposite over every video frame have been removed (see globals.css).
  *
@@ -32,40 +33,19 @@ export default function Background() {
 
     video.src = '/bg/ultrasound.mp4';
 
-    let tabVisible = !document.hidden;
-
     const sync = () => {
-      // Veil is ~opaque past one viewport, so the video is invisible by then.
-      const onScreen = window.scrollY < window.innerHeight * 1.1;
-      const shouldPlay = tabVisible && onScreen;
-      if (shouldPlay && video.paused) {
+      if (!document.hidden && video.paused) {
         video.play().catch(() => {});
-      } else if (!shouldPlay && !video.paused) {
+      } else if (document.hidden && !video.paused) {
         video.pause();
       }
     };
 
-    let scheduled = false;
-    const onScroll = () => {
-      if (scheduled) return;
-      scheduled = true;
-      requestAnimationFrame(() => {
-        scheduled = false;
-        sync();
-      });
-    };
-    const onVisibility = () => {
-      tabVisible = !document.hidden;
-      sync();
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    document.addEventListener('visibilitychange', onVisibility);
+    document.addEventListener('visibilitychange', sync);
     sync();
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      document.removeEventListener('visibilitychange', onVisibility);
+      document.removeEventListener('visibilitychange', sync);
     };
   }, []);
 

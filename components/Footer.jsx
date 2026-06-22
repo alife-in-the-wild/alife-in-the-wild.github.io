@@ -22,6 +22,15 @@ export default function Footer() {
             </a>
           </p>
         </div>
+        <div>
+          <p className="footer-label">Background</p>
+          <p>
+            Video by{' '}
+            <a href="https://www.universaleverything.com/" rel="noopener">
+              Universal Everything ↗
+            </a>
+          </p>
+        </div>
       </div>
       <div className="footer-bottom">
         <span>© 2026 Artificial Life in the Wild · Workshop organising committee</span>
