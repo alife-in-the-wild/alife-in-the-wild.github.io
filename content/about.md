@@ -36,3 +36,7 @@ observational inquiry — by their behaviour in the world, not their code alone.
 We invite contributions that are speculative, unfinished, weird, or
 empirically grounded. We especially welcome work that did not survive the
 lab.
+
+Read the position paper:
+[*Artificial Life in the Wild: From Simulated Worlds to Infrastructural
+Ecologies*](/artificial-life-in-the-wild.pdf) (PDF).
