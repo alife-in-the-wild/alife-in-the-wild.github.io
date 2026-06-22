@@ -1,5 +1,6 @@
 import Section from './Section';
 import { readMd, parseCfp } from '@/lib/content';
+import { EASYCHAIR_SUBMISSION_URL } from '@/lib/links';
 
 export default async function Cfp() {
   const md = await readMd('cfp');
@@ -30,10 +31,10 @@ export default async function Cfp() {
       <div className="cfp-actions">
         <a
           className="btn primary"
-          href="#"
-          aria-disabled="true"
+          href={EASYCHAIR_SUBMISSION_URL}
+          rel="noopener"
         >
-          EasyChair submission portal — opens 15 May 2026
+          Submit via EasyChair ↗
         </a>
         <a
           className="btn ghost"
