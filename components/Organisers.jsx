@@ -6,7 +6,7 @@ export default async function Organisers() {
   const { people, committeeHtml } = parseOrganisers(md);
 
   return (
-    <Section id="organisers" num="06" title="Organisers">
+    <Section id="organisers" num="05" title="Organisers">
       <div className="organisers-grid">
         {people.map((p, i) => (
           <article key={i} className="organiser">

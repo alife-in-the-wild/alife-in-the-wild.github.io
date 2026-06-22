@@ -33,11 +33,11 @@ export default async function Cfp() {
           href="#"
           aria-disabled="true"
         >
-          Submission portal — opens 15 May 2026
+          EasyChair submission portal — opens 15 May 2026
         </a>
         <a
           className="btn ghost"
-          href="mailto:alife.in.the.wild@gmail.com"
+          href="mailto:amber@reality.design"
         >
           Contact the organisers ↗
         </a>

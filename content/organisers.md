@@ -13,4 +13,4 @@
 
 To be announced. The committee will be drawn from the ALife, robotics,
 ecology, art-science, and unconventional-computing communities.
-[Get in touch](mailto:alife.in.the.wild@gmail.com) if you would like to review.
+[Get in touch](mailto:amber@reality.design) if you would like to review.

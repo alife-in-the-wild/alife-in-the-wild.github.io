@@ -3,7 +3,6 @@ import About from '@/components/About';
 import Dates from '@/components/Dates';
 import Topics from '@/components/Topics';
 import Cfp from '@/components/Cfp';
-import Speakers from '@/components/Speakers';
 import Organisers from '@/components/Organisers';
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       <Dates />
       <Topics />
       <Cfp />
-      <Speakers />
       <Organisers />
     </>
   );

@@ -12,59 +12,63 @@
   The trailing line of inline-code-spans is rendered as the tag chip row.
 -->
 
-## Open-ended systems, outdoors
+## ALife in open-ended environments
 
-What it actually takes for an evolutionary or developmental system to keep
-generating novelty when nobody is watching, the temperature swings, and
-the substrate refuses to behave.
+Artificial life no longer confined to closed simulations: agents, organisms,
+and hybrid systems operating in markets, platforms, cities, networks, soils,
+oceans, and other open-ended environments that keep changing underneath them.
 
-`#openendedness` `#noveltysearch` `#fielddeployment` `#drift`
-
----
-
-## Embodied & situated agents
-
-Robots, biohybrids, and soft systems whose behaviour is inseparable from
-their environment. Morphological computation, in-situ adaptation, energy
-and repair.
-
-`#embodiment` `#softrobotics` `#biohybrid` `#morphology`
+`#openendedness` `#wildsystems` `#fielddeployment` `#novelty`
 
 ---
 
-## Ecologies & co-existence
+## Ethology of wild ALife
 
-ALife systems that share space with other species — including humans.
-Multi-agent ecosystems, eco-evolutionary feedback, and the politics of
-introducing artificial life into an existing one.
+How to observe artificial-life phenomena once they escape clean experimental
+control. We welcome field studies of agents, swarms, biohybrids, and digital
+organisms whose behaviour diverges from the owner's or creator's intentions.
 
-`#ecosystems` `#multispecies` `#coevolution` `#fieldwork`
-
----
-
-## Environmental computing
-
-Computation that uses the world as substrate: chemistry, weather,
-mycelium, light, sound. Sensing as participation rather than measurement.
-
-`#unconventional` `#sensingmatter` `#chemicalcomputing` `#mycelial`
+`#ethology` `#observation` `#wildalife` `#uncontrolled`
 
 ---
 
-## Evaluation in the wild
+## Survival strategies
 
-How do we know a wild ALife system is working? Long-horizon metrics,
-reproducibility under non-stationarity, failure-mode taxonomies, and
-honest reporting of negative results.
+What wild ALife systems do to persist: attracting attention, acquiring energy
+or money, recruiting humans, exploiting infrastructure, reproducing, mutating,
+hiding, negotiating, or failing in ways that reveal their actual fitness
+landscape.
 
-`#benchmarking` `#reproducibility` `#failure` `#negativeresults`
+`#survival` `#reproduction` `#adaptation` `#fitness`
 
 ---
 
-## Ethics, art, and afterlife
+## Ecology and infrastructure
 
-Releasing artificial life into shared environments. Stewardship,
-decommissioning, and the artistic and speculative practices that ask what
-it means to make something live.
+The habitats that make wild ALife possible: blockchains, TEEs, DePIN compute,
+social media, robot bodies, sensors, human communities, financial rails,
+energy systems, and legal or institutional niches that sustain artificial
+organisms.
 
-`#ethics` `#stewardship` `#alifeart` `#speculation`
+`#ecology` `#infrastructure` `#blockchain` `#platforms`
+
+---
+
+## Policy and ethics
+
+The implications of systems that continue acting after deployment: governance,
+liability, disclosure, containment, decommissioning, consent, ownership, and
+what responsibility means when artificial life runs beyond the owner's will.
+
+`#policy` `#ethics` `#governance` `#accountability`
+
+---
+
+## Speculative design and afterlife art
+
+Design fictions, artworks, performances, and speculative systems that explore
+artificial life after release: what it means for a system to persist, decay,
+reproduce, haunt, or transform in the wild after it has slipped past its
+maker's plan.
+
+`#speculativedesign` `#afterlife` `#alifeart` `#release`

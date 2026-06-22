@@ -5,25 +5,20 @@ export default function Footer() {
       <div className="footer-grid">
         <div>
           <p className="footer-title">Artificial Life in the Wild</p>
-          <p className="footer-sub">A workshop at ALIFE 2026.</p>
+          <p className="footer-sub">
+            A workshop at{' '}
+            <a href="https://2026.alife.org/" rel="noopener">ALIFE 2026</a>.
+          </p>
         </div>
         <div>
           <p className="footer-label">Contact</p>
-          <p><a href="mailto:alife.in.the.wild@gmail.com">alife.in.the.wild@gmail.com</a></p>
-        </div>
-        <div>
-          <p className="footer-label">Code</p>
-          <p>
-            <a href="https://github.com/alife-in-the-wild" rel="noopener">
-              github.com/alife-in-the-wild
-            </a>
-          </p>
+          <p><a href="mailto:amber@reality.design">amber@reality.design</a></p>
         </div>
         <div>
           <p className="footer-label">Conference</p>
           <p>
-            <a href="https://alife.org/" rel="noopener">
-              ISAL · ALIFE 2026 ↗
+            <a href="https://2026.alife.org/" rel="noopener">
+              ALIFE 2026 · Waterloo ↗
             </a>
           </p>
         </div>

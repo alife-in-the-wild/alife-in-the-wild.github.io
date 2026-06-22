@@ -11,8 +11,8 @@
 
 | Milestone           | Deadline      | Notes                                       |
 | ------------------- | ------------- | ------------------------------------------- |
-| Submissions open    | 15 May 2026   | OpenReview portal goes live                 |
-| Submission deadline | 30 Jun 2026   | Extended abstracts (2–4 pp) and artefacts   |
+| Submissions open    | 15 May 2026   | EasyChair portal goes live                  |
+| Submission deadline | 15 Jul 2026   | Extended abstracts (2–4 pp) and artefacts   |
 | Notifications       | 24 Jul 2026   | Decisions and reviewer feedback             |
 | Camera ready        | 7 Aug 2026    | Final PDFs and demo plans                   |
 | Workshop            | 17–21 Aug 2026 | One day during ALIFE 2026, Waterloo (TBA)  |

@@ -22,7 +22,6 @@ export default function Header() {
         <a href="#dates">Dates</a>
         <a href="#topics">Topics</a>
         <a href="#cfp">Submit</a>
-        <a href="#speakers">Speakers</a>
         <a href="#organisers">Organisers</a>
         <a href="#cfp" className="nav-cta">Call for papers ↗</a>
       </nav>

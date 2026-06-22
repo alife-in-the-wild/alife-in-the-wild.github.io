@@ -22,6 +22,10 @@ We invite extended abstracts, artefacts, and field reports for the
 *Artificial Life in the Wild* workshop at
 [ALIFE 2026](https://2026.alife.org/) in Waterloo, Canada. All accepted
 contributions appear in the open-access ALIFE 2026 workshop proceedings.
+All PDF submissions should use the official
+[ALIFE 2026 template](https://www.overleaf.com/read/tzwbbdfxqdrw);
+LaTeX and Word downloads are linked from the
+[ALIFE 2026 Call for Papers](https://2026.alife.org/call-for-papers/).
 
 ---
 
