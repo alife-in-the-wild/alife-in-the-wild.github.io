@@ -244,6 +244,10 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   text-transform: uppercase; letter-spacing: .18em;
   color: var(--ink-faint) !important;
 }
+/* Superseded date (e.g. an extended deadline): struck out, dimmed, new one follows. */
+.dates-row > div:nth-child(2) del { color: var(--ink-faint); margin-right: 8px; }
+.dates-row > div:nth-child(2) strong { font-weight: 500; }
+
 .dates-highlight { background: linear-gradient(90deg, rgba(191,230,201,0.06), transparent); }
 .dates-highlight > div:nth-child(1),
 .dates-highlight > div:nth-child(2) { color: var(--accent); }
@@ -285,6 +289,54 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .tags li {
   font-family: var(--font-mono); font-size: 11px; color: var(--accent);
   border: 1px solid var(--rule); padding: 4px 9px; border-radius: 999px;
+}
+
+/* ---------- Programme (speakers + running order) ---------- */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px; margin-bottom: 28px;
+}
+.speaker {
+  padding: 32px; border: 1px solid var(--rule); border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.018), transparent);
+}
+.speaker h3 {
+  font-family: var(--font-display); font-weight: 400; font-size: 24px;
+  margin: 0 0 6px;
+}
+.speaker-affil {
+  font-family: var(--font-mono); font-size: 12px; color: var(--ink-dim);
+  margin: 0 0 16px;
+}
+.speaker-talk {
+  font-family: var(--font-mono); font-size: 12px; color: var(--accent);
+  margin: 0; text-transform: uppercase; letter-spacing: .08em;
+}
+.speaker-body p { color: var(--ink-dim); font-size: 15px; margin: 14px 0 0; }
+
+.schedule-subhead { margin-top: 56px; }
+.schedule { display: grid; border-top: 1px solid var(--rule); }
+.schedule-row {
+  display: grid; grid-template-columns: 1fr 2.4fr 1.2fr;
+  gap: 24px; padding: 20px 0;
+  border-bottom: 1px solid var(--rule); align-items: baseline;
+}
+.schedule-row > div:nth-child(1) { font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+.schedule-row > div:nth-child(2) { font-family: var(--font-display); font-size: 18px; }
+.schedule-row > div:nth-child(3) { font-family: var(--font-mono); font-size: 12px; color: var(--ink-dim); }
+.schedule-head > div {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  text-transform: uppercase; letter-spacing: .18em;
+  color: var(--ink-faint) !important;
+}
+.schedule-highlight { background: linear-gradient(90deg, rgba(191,230,201,0.06), transparent); }
+.schedule-highlight > div:nth-child(2) { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .schedule-row { grid-template-columns: 1fr; gap: 6px; }
+  .schedule-head { display: none; }
 }
 
 /* ---------- CFP ---------- */

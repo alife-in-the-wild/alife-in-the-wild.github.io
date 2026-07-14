@@ -7,10 +7,10 @@ export const metadata = {
   metadataBase: new URL('https://alife-in-the-wild.github.io/'),
   title: 'Artificial Life in the Wild — ALIFE 2026 Workshop',
   description:
-    "An ALIFE 2026 workshop on the open-world behaviour of artificial life: embodied agents, generative ecologies, agentic AI, biohybrids, and the field methods that let us study artificial agents the way we study real ones. 17–21 August 2026, Waterloo, Canada.",
+    "An ALIFE 2026 workshop on the open-world behaviour of artificial life: embodied agents, generative ecologies, agentic AI, biohybrids, and the field methods that let us study artificial agents the way we study real ones. 20 August 2026, Waterloo, Canada.",
   openGraph: {
     title: 'Artificial Life in the Wild — ALIFE 2026 Workshop',
-    description: 'An ALIFE 2026 workshop on the open-world behaviour of artificial life. 17–21 August 2026, Waterloo, Canada.',
+    description: 'An ALIFE 2026 workshop on the open-world behaviour of artificial life. 20 August 2026, Waterloo, Canada.',
     url: 'https://alife-in-the-wild.github.io/',
     type: 'website',
   },

@@ -67,7 +67,8 @@ but here's the cheat sheet:
 | `cfp.md`          | Call for papers  | Optional intro paragraph + one card per `---`-separated chunk   |
 | `dates.md`        | Important dates  | A markdown table; the last row is highlighted as the workshop date |
 | `topics.md`       | Topics           | One topic per chunk; trailing line of `` `#tags` `` becomes chips |
-| `speakers.md`     | Invited speakers | One speaker per chunk; first paragraph after the heading = affiliation |
+| `speakers.md`     | Programme        | One speaker per chunk; paragraphs after the heading = affiliation, then talk |
+| `programme.md`    | Programme        | Running-order table; the last row is highlighted as the closing discussion |
 | `organisers.md`   | Organisers       | Markdown list (chunk 1) + committee paragraph (chunk 2)         |
 
 Common rule: `---` on its own line is a separator between repeating
@@ -143,19 +144,30 @@ Description …
 `#embodiment` `#softrobotics`
 ```
 
-### `content/speakers.md` — invited speakers
+### `content/speakers.md` + `content/programme.md` — the programme
 
-One speaker per chunk. First paragraph after the heading is the
-affiliation line; everything after that is the bio.
+These two files render as one section. `speakers.md` is the speaker
+grid: one speaker per chunk, where the first paragraph after the heading
+is the affiliation, the second is the talk (shown in accent type — link
+it if the talk has a project URL), and anything after that is the bio.
 
 ```md
-## Anna Example
-Some University · Field of work
+## [Anna Example](https://example.edu/anna)
 
-Bio paragraph.
+Some University
 
-Optional second bio paragraph.
+**[Talk title](https://talk.example/)**
+
+Optional bio paragraph.
 ```
+
+`programme.md` is the running order — a GFM table of `Time | Item | Who`
+parsed by the same helper as `dates.md`, so the **last row** is
+highlighted (keep the closing discussion there). The session is 120
+minutes; the file's header comment carries the arithmetic, so check it
+before changing a duration.
+
+In both files, a trailing blockquote becomes the small footnote line.
 
 ### `content/organisers.md` — organisers + committee
 

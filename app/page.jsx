@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Dates from '@/components/Dates';
+import Programme from '@/components/Programme';
 import Topics from '@/components/Topics';
 import Cfp from '@/components/Cfp';
 import Organisers from '@/components/Organisers';
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <About />
       <Dates />
+      <Programme />
       <Topics />
       <Cfp />
       <Organisers />

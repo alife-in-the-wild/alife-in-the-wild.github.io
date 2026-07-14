@@ -22,6 +22,7 @@ export default function Header() {
       <nav className="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#dates">Dates</a>
+        <a href="#programme">Programme</a>
         <a href="#topics">Topics</a>
         <a href={EASYCHAIR_SUBMISSION_URL} rel="noopener">Submit</a>
         <a href="#organisers">Organisers</a>

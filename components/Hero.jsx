@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="hero-meta">
           <div>
             <span className="meta-label">When</span>
-            <span className="meta-value">17–21&nbsp;Aug&nbsp;2026</span>
+            <span className="meta-value">Thu&nbsp;20&nbsp;Aug&nbsp;2026</span>
           </div>
           <div>
             <span className="meta-label">Where</span>

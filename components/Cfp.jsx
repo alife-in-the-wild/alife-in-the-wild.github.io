@@ -7,7 +7,7 @@ export default async function Cfp() {
   const { introHtml, cards } = parseCfp(md);
 
   return (
-    <Section id="cfp" num="04" title="Call for participation">
+    <Section id="cfp" num="05" title="Call for participation">
       {introHtml ? (
         <div
           className="cfp-intro"

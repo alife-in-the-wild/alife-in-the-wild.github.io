@@ -1,5 +1,5 @@
 🌱 **Call for Papers — *Artificial Life in the Wild***
-*A workshop at ALIFE 2026 · University of Waterloo, Canada · 17–21 August 2026*
+*A workshop at ALIFE 2026 · University of Waterloo, Canada · Thursday 20 August 2026, 10:00–12:00*
 
 > A call from *life as it could be* to *life as it is becoming.* From the closed simulation — the petri dish — to the open environment. Artificial life has left the lab, and the question is no longer what it might do, but what to do with what it is already doing.
 
@@ -18,7 +18,7 @@ We're bringing together the ALife, robotics, ecology, agentic-AI, and art-scienc
 
 We welcome work that is speculative, unfinished, weird, or empirically grounded — **especially work that didn't survive the lab.** Accepted contributions appear in the open-access workshop website.
 
-🗓️ **Submission deadline: 15 July 2026** (via EasyChair)
+🗓️ **Submission deadline extended: ~~15 July~~ → 21 July 2026** (via EasyChair)
 
 🔗 Details & CFP: <https://alife-in-the-wild.github.io/>
 

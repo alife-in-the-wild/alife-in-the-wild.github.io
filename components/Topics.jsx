@@ -6,7 +6,7 @@ export default async function Topics() {
   const topics = parseTopics(md);
 
   return (
-    <Section id="topics" num="03" title="Topics">
+    <Section id="topics" num="04" title="Topics">
       <div className="topics-grid">
         {topics.map((t, i) => (
           <article key={i} className="topic">
