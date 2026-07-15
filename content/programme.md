@@ -15,7 +15,7 @@
 | ----------- | ----------------------------------------------------- | -------------------- |
 | 10:00–10:15 | Artificial life in the wild                            | Botao Amber Hu       |
 | 10:15–10:30 | Autonomous organisations                               | Helena Rong          |
-| 10:30–10:45 | Symbients                                              | Primavera De Filippi |
+| 10:30–10:45 | Escaping the simulation: AI-native institutions for AI agents | Primavera De Filippi |
 | 10:45–11:30 | Contributed talks — six accepted submissions, 7 min each | Accepted authors     |
 | 11:30–12:00 | Open discussion — a research agenda for ALife in the wild | Everyone             |
 
