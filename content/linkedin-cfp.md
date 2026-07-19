@@ -18,7 +18,7 @@ We're bringing together the ALife, robotics, ecology, agentic-AI, and art-scienc
 
 We welcome work that is speculative, unfinished, weird, or empirically grounded — **especially work that didn't survive the lab.** Accepted contributions appear in the open-access workshop website.
 
-🗓️ **Submission deadline extended: ~~15 July~~ → 21 July 2026** (via EasyChair)
+🗓️ **Submission deadline extended: ~~15 July~~ → 31 July 2026** (via EasyChair)
 
 🔗 Details & CFP: <https://alife-in-the-wild.github.io/>
 
