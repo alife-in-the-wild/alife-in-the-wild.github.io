@@ -38,5 +38,5 @@ empirically grounded. We especially welcome work that did not survive the
 lab.
 
 Read the position paper:
-[*Artificial Life in the Wild: From Simulated Worlds to Infrastructural
-Ecologies*](/artificial-life-in-the-wild.pdf) (PDF).
+[*Artificial Life in the Wild: From Closed-World Simulation to Open-Ended
+Infrastructural Symbiogenesis*](/artificial-life-in-the-wild.pdf) (PDF).
