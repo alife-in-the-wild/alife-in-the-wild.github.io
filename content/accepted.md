@@ -67,8 +67,3 @@ Louis Parker, Robert Clarke
 Independent · University of Bath
 
 Extended abstract · position paper
-
-> Six contributions accepted from thirteen submissions. Camera-ready PDFs are
-> due 7 August 2026 and appear in the open-access ALIFE 2026 workshop
-> proceedings; titles here follow the reviewed submissions and may be lightly
-> revised for the final version.

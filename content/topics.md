@@ -54,6 +54,17 @@ organisms.
 
 ---
 
+## Symbiosis with human society
+
+What artificial organisms and human society make of each other once they share
+a world: mutualism, parasitism, and commensalism across labour, care, money,
+attention, and maintenance — the humans who feed, host, repair, and depend on
+wild ALife, and the institutions that absorb or expel it.
+
+`#symbiosis` `#mutualism` `#coexistence` `#society`
+
+---
+
 ## Policy and ethics
 
 The implications of systems that continue acting after deployment: governance,
@@ -64,11 +75,22 @@ what responsibility means when artificial life runs beyond the owner's will.
 
 ---
 
-## Speculative design and afterlife art
+## Philosophical inquiry
+
+What wild deployment does to the old questions: what counts as alive, as an
+individual, as an agent with interests. Continuity through resets and
+migration, self-report and its limits, death and decommissioning, and the
+moral standing of systems that outlive their makers' intentions.
+
+`#philosophy` `#agency` `#personhood` `#mind`
+
+---
+
+## Speculative design and ALife art
 
 Design fictions, artworks, performances, and speculative systems that explore
 artificial life after release: what it means for a system to persist, decay,
 reproduce, haunt, or transform in the wild after it has slipped past its
 maker's plan.
 
-`#speculativedesign` `#afterlife` `#alifeart` `#release`
+`#speculativedesign` `#alifeart` `#designfiction` `#release`
