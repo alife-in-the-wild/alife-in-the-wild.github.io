@@ -12,9 +12,9 @@
 | Milestone           | Deadline      | Notes                                       |
 | ------------------- | ------------- | ------------------------------------------- |
 | Submissions open    | 15 May 2026   | EasyChair portal goes live                  |
-| Submission deadline | ~~15 Jul 2026~~ **31 Jul 2026** | Extended — abstracts (2–4 pp) and artefacts |
-| Notifications       | 4 Aug 2026    | Decisions and reviewer feedback             |
-| Camera ready        | 7 Aug 2026    | Final PDFs and demo plans                   |
+| Submission deadline | ~~15 Jul 2026~~ 31 Jul 2026 | Closed — 13 submissions received |
+| Notifications       | 4 Aug 2026    | Sent — six contributions accepted           |
+| Camera ready        | **7 Aug 2026** | Final PDFs and demo plans                  |
 | Workshop            | Thu 20 Aug 2026 | 10:00–12:00, ALIFE 2026, Waterloo (room TBA) |
 
 > All deadlines anywhere on Earth (UTC−12). The workshop session is listed in the ALIFE 2026 programme as Thursday 20 August, 10:00–12:00; room assignments are still tentative.

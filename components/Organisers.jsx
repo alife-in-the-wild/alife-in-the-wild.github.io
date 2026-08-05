@@ -3,7 +3,7 @@ import { readMd, parseOrganisers } from '@/lib/content';
 
 export default async function Organisers() {
   const md = await readMd('organisers');
-  const { people, committeeHtml } = parseOrganisers(md);
+  const { people } = parseOrganisers(md);
 
   return (
     <Section id="organisers" num="06" title="Organisers">
@@ -20,11 +20,6 @@ export default async function Organisers() {
           </article>
         ))}
       </div>
-      <h3 className="subhead">Programme committee</h3>
-      <div
-        className="committee"
-        dangerouslySetInnerHTML={{ __html: committeeHtml }}
-      />
     </Section>
   );
 }

@@ -68,8 +68,9 @@ but here's the cheat sheet:
 | `dates.md`        | Important dates  | A markdown table; the last row is highlighted as the workshop date |
 | `topics.md`       | Topics           | One topic per chunk; trailing line of `` `#tags` `` becomes chips |
 | `speakers.md`     | Programme        | One speaker per chunk; paragraphs after the heading = affiliation, then talk |
-| `programme.md`    | Programme        | Running-order table; the last row is highlighted as the closing discussion |
-| `organisers.md`   | Organisers       | Markdown list (chunk 1) + committee paragraph (chunk 2)         |
+| `accepted.md`     | Programme        | One accepted paper per chunk; paragraphs after the heading = authors, affiliation, track |
+| `programme.md`    | Programme        | Running order as `## Label` + table groups; the very last row is highlighted |
+| `organisers.md`   | Organisers       | Markdown list of `- **Name** — Affiliation`                     |
 
 Common rule: `---` on its own line is a separator between repeating
 items. Inline markdown (`*italic*`, `**bold**`, `[links](url)`) works
@@ -161,28 +162,48 @@ Some University
 Optional bio paragraph.
 ```
 
-`programme.md` is the running order — a GFM table of `Time | Item | Who`
-parsed by the same helper as `dates.md`, so the **last row** is
-highlighted (keep the closing discussion there). The session is 120
-minutes; the file's header comment carries the arithmetic, so check it
-before changing a duration.
+`accepted.md` holds the accepted papers, rendered as a numbered list
+between the speakers and the running order. One chunk per paper: `##
+Title`, then the authors, the affiliation, and the track, one paragraph
+each. Its order is the running order — reorder it and the contributed
+rows in `programme.md` together.
+
+```md
+## A Paper Title
+
+Anna Example, Pat Example
+
+Some University
+
+Field report
+```
+
+`programme.md` is the running order, split into `---`-separated groups —
+invited talks, contributed talks, discussion. Each group is a `## Label`
+heading plus a GFM table of `Time | Item | Who`; the label is drawn as a
+divider above its rows, the column headers come from the first table, and
+the **last row of the last group** is highlighted (keep the closing
+discussion there). The session is 120 minutes; the file's header comment
+carries the arithmetic, so check it before changing a duration.
+
+```md
+## Invited talks
+
+| Time        | Item                | Who            |
+| ----------- | ------------------- | -------------- |
+| 10:00–10:15 | A talk title        | Anna Example   |
+```
 
 In both files, a trailing blockquote becomes the small footnote line.
 
-### `content/organisers.md` — organisers + committee
+### `content/organisers.md` — organisers
 
-Two chunks. Chunk 1 is a markdown list of organisers — each item must
-follow `- **Name** — Affiliation` (em-dash or hyphen both work). Chunk
-2 is free prose for the programme committee paragraph.
+A markdown list of organisers — each item must follow
+`- **Name** — Affiliation` (em-dash or hyphen both work).
 
 ```md
 - **Amber Example** — University of Oxford
 - **Pat Example** — Some Institute
-
----
-
-The committee will be drawn from … [Get in touch](mailto:foo@bar.com)
-if you would like to review.
 ```
 
 ## Local development

@@ -315,7 +315,34 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 }
 .speaker-body p { color: var(--ink-dim); font-size: 15px; margin: 14px 0 0; }
 
-.schedule-subhead { margin-top: 56px; }
+.papers-subhead, .schedule-subhead { margin-top: 56px; }
+.papers { display: grid; border-top: 1px solid var(--rule); }
+.paper {
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 24px; padding: 22px 0;
+  border-bottom: 1px solid var(--rule); align-items: baseline;
+}
+.paper-num { font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+.paper-main h4 {
+  font-family: var(--font-display); font-weight: 400; font-size: 19px;
+  line-height: 1.35; margin: 0; letter-spacing: -0.01em;
+}
+.paper-authors { font-size: 14px; color: var(--ink-dim); margin: 8px 0 0; }
+.paper-affil {
+  font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint);
+  margin: 4px 0 0;
+}
+.paper-track {
+  font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+  text-transform: uppercase; letter-spacing: .08em; text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .paper { grid-template-columns: auto 1fr; gap: 6px 16px; }
+  .paper-track { grid-column: 2; text-align: left; margin-top: 8px; }
+}
+
 .schedule { display: grid; border-top: 1px solid var(--rule); }
 .schedule-row {
   display: grid; grid-template-columns: 1fr 2.4fr 1.2fr;
@@ -331,6 +358,16 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   text-transform: uppercase; letter-spacing: .18em;
   color: var(--ink-faint) !important;
 }
+/* Each group (invited / contributed / discussion) carries its own label row;
+ * the label sits flush with the rules so the blocks read as separate. */
+.schedule-group { display: contents; }
+.schedule-group-label {
+  padding: 34px 0 12px; border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+  text-transform: uppercase; letter-spacing: .18em;
+}
+.schedule-head + .schedule-group .schedule-group-label:first-child,
+.schedule-group:first-of-type .schedule-group-label { padding-top: 24px; }
 .schedule-highlight { background: linear-gradient(90deg, rgba(191,230,201,0.06), transparent); }
 .schedule-highlight > div:nth-child(2) { color: var(--accent); }
 
@@ -367,14 +404,12 @@ a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 /* ---------- Organisers ---------- */
 .organisers-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 4px; border-top: 1px solid var(--rule); margin-bottom: 56px;
+  gap: 4px; border-top: 1px solid var(--rule);
 }
 .organiser { padding: 24px 0; border-bottom: 1px solid var(--rule); padding-right: 24px; }
 .organiser h3 { font-family: var(--font-display); font-weight: 400; font-size: 20px; margin: 0; }
 .org-affil { font-family: var(--font-mono); font-size: 12px; color: var(--ink-dim); margin: 4px 0 0; }
 .subhead { font-family: var(--font-display); font-weight: 400; font-size: 24px; margin: 0 0 14px; }
-.committee, .committee p { color: var(--ink-dim); max-width: 70ch; margin: 0 0 12px; }
-.committee p:last-child { margin-bottom: 0; }
 
 /* ---------- Footer ---------- */
 .site-footer {

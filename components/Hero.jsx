@@ -1,5 +1,3 @@
-import { EASYCHAIR_SUBMISSION_URL } from '@/lib/links';
-
 export default function Hero() {
   return (
     <section className="hero">
@@ -33,8 +31,8 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-cta">
-          <a className="btn primary" href={EASYCHAIR_SUBMISSION_URL} rel="noopener">
-            Submit a contribution ↗
+          <a className="btn primary" href="#programme">
+            See the programme →
           </a>
           <a className="btn ghost" href="#about">Read the theme →</a>
         </div>

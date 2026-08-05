@@ -1,6 +1,5 @@
 import Section from './Section';
 import { readMd, parseCfp } from '@/lib/content';
-import { EASYCHAIR_SUBMISSION_URL } from '@/lib/links';
 
 export default async function Cfp() {
   const md = await readMd('cfp');
@@ -29,12 +28,8 @@ export default async function Cfp() {
       </div>
 
       <div className="cfp-actions">
-        <a
-          className="btn primary"
-          href={EASYCHAIR_SUBMISSION_URL}
-          rel="noopener"
-        >
-          Submit via EasyChair ↗
+        <a className="btn primary" href="#programme">
+          See the accepted papers →
         </a>
         <a
           className="btn ghost"
@@ -44,8 +39,8 @@ export default async function Cfp() {
         </a>
       </div>
       <p className="footnote">
-        All accepted contributions appear in the ALIFE 2026 workshop
-        proceedings (open access).
+        Submissions are closed. All accepted contributions appear in the
+        ALIFE 2026 workshop proceedings (open access).
       </p>
     </Section>
   );

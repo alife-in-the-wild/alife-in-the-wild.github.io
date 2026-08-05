@@ -11,7 +11,7 @@
 
 CNRS · Berkman Klein Center, Harvard University
 
-**Escaping the simulation: AI-native institutions for AI agents**
+**Escaping the simulation**
 
 Part of the [Symbients](https://symbient.life/) project.
 
@@ -22,6 +22,8 @@ Part of the [Symbients](https://symbient.life/) project.
 New York University Shanghai
 
 **Autonomous organisations**
+
+Part of the [Stanford AO](https://stanfordao.org/) project.
 
 ---
 

@@ -1,5 +1,3 @@
-import { EASYCHAIR_SUBMISSION_URL } from '@/lib/links';
-
 export default function Header() {
   return (
     <header className="site-header">
@@ -24,9 +22,8 @@ export default function Header() {
         <a href="#dates">Dates</a>
         <a href="#programme">Programme</a>
         <a href="#topics">Topics</a>
-        <a href={EASYCHAIR_SUBMISSION_URL} rel="noopener">Submit</a>
         <a href="#organisers">Organisers</a>
-        <a href="#cfp" className="nav-cta">Call for papers ↗</a>
+        <a href="#programme" className="nav-cta">Accepted papers →</a>
       </nav>
     </header>
   );

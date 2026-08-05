@@ -18,8 +18,10 @@
   not here.
 -->
 
-We invite extended abstracts, artefacts, and field reports for the
-*Artificial Life in the Wild* workshop at
+Submissions closed on 31 July 2026 and decisions went out on 4 August; the
+six accepted contributions are listed in the
+[programme](#programme). We invited extended abstracts, artefacts, and field
+reports for the *Artificial Life in the Wild* workshop at
 [ALIFE 2026](https://2026.alife.org/) in Waterloo, Canada. All accepted
 contributions appear in the open-access ALIFE 2026 workshop proceedings.
 All PDF submissions should use the official
