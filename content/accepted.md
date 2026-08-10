@@ -3,7 +3,7 @@
     `## Title`    → paper title
     paragraph 1   → authors
     paragraph 2   → affiliation(s)
-    paragraph 3   → track / contribution type
+    paragraph 3   → track / contribution type (+ optional camera-ready PDF link)
   A trailing blockquote becomes the footnote under the list.
 
   The order here IS the running order in programme.md — if you reorder these,
@@ -16,7 +16,7 @@ sami, uro, liv, me, ne, nyx, kei
 
 openLife · Alternative Machine Inc.
 
-Extended abstract
+Extended abstract · [PDF](/papers/self-reports-from-open-world-artificial-life.pdf)
 
 ---
 
@@ -26,7 +26,7 @@ Prince Siddhpara
 
 Mura ALife Labs
 
-Field report
+Field report · [PDF](/papers/keeping-a-non-llm-organism-alive-in-the-wild.pdf)
 
 ---
 
@@ -36,7 +36,7 @@ Yihan Zhou
 
 Isofucius Corp.
 
-Extended abstract
+Extended abstract · [PDF](/papers/the-judge-shapes-the-fitness-landscape.pdf)
 
 ---
 
@@ -46,7 +46,7 @@ Ryan Perks
 
 Independent researcher, United Kingdom
 
-Field report
+Field report · [PDF](/papers/the-cost-of-watching.pdf)
 
 ---
 
@@ -56,7 +56,7 @@ Ruipeng Wang, Vera Yu Wu, Jimmy Haochen Xu, Richard Haoxi Zhang, Leo Liu
 
 MIT Media Lab, Massachusetts Institute of Technology
 
-Extended abstract · installation
+Extended abstract · installation · [PDF](/papers/born-not-made.pdf)
 
 ---
 
@@ -66,4 +66,4 @@ Louis Parker, Robert Clarke
 
 Independent · University of Bath
 
-Extended abstract · position paper
+Extended abstract · position paper · [PDF](/papers/world-model-extractable-value.pdf)
