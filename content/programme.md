@@ -45,4 +45,4 @@
 | ----------- | ----------------------------------------------------- | -------------------- |
 | 11:27–12:00 | Open discussion — a research agenda for ALife in the wild | Everyone             |
 
-> Thursday 20 August 2026, 10:00–12:00. Three invited talks of fifteen minutes, six contributed talks of seven minutes, then open discussion for the rest of the session. Timings are indicative and may shift slightly on the day.
+> Thursday 20 August 2026, 10:00–12:00. Three invited talks of fifteen minutes, six contributed talks of seven minutes, then open discussion for the rest of the session. Timings are indicative and may shift slightly on the day. The workshop is hybrid and free to attend remotely — [register on Luma](https://luma.com/5nhlwhi4) to receive the Zoom link.

@@ -23,7 +23,14 @@ export default function Header() {
         <a href="#programme">Programme</a>
         <a href="#topics">Topics</a>
         <a href="#organisers">Organisers</a>
-        <a href="#programme" className="nav-cta">Accepted papers →</a>
+        <a
+          href="https://luma.com/5nhlwhi4"
+          className="nav-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Register →
+        </a>
       </nav>
     </header>
   );

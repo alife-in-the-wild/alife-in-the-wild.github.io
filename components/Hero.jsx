@@ -31,9 +31,15 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-cta">
-          <a className="btn primary" href="#programme">
-            See the programme →
+          <a
+            className="btn primary"
+            href="https://luma.com/5nhlwhi4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register — free, hybrid →
           </a>
+          <a className="btn ghost" href="#programme">See the programme →</a>
           <a className="btn ghost" href="#about">Read the theme →</a>
         </div>
       </div>
