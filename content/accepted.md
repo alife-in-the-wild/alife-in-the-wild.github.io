@@ -16,7 +16,7 @@ sami, uro, liv, me, ne, nyx, kei
 
 openLife · Alternative Machine Inc.
 
-Extended abstract · [PDF](/papers/self-reports-from-open-world-artificial-life.pdf)
+Extended abstract · [PDF](/papers/self-reports-from-open-world-artificial-life.pdf) · [Talk video](https://openlife.theirinc.app/alife2026wild/openlife_video-4k.mp4)
 
 ---
 
@@ -46,7 +46,7 @@ Ryan Perks
 
 Independent researcher, United Kingdom
 
-Field report · [PDF](/papers/the-cost-of-watching.pdf)
+Field report · [PDF](/papers/the-cost-of-watching.pdf) · [Talk video](https://drive.google.com/file/d/1Xf3uP_ZvVW0-yPhOEPBXMYoAo1q1rxJ1/view)
 
 ---
 
