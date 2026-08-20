@@ -31,6 +31,8 @@ Part of the [Stanford AO](https://stanfordao.org/) project.
 
 University of Oxford
 
-**Artificial life in the wild**
+**[Artificial life in the wild](https://drive.google.com/file/d/1LPRg_s8Ft7YaOpffROSdFA2cEITFMAAQ/view?usp=sharing)**
+
+[Slides (PDF)](https://drive.google.com/file/d/1LPRg_s8Ft7YaOpffROSdFA2cEITFMAAQ/view?usp=sharing)
 
 > Each invited talk runs 15 minutes. Abstracts will be posted closer to the workshop.
